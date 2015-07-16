@@ -10,39 +10,88 @@
         rel="stylesheet" type="text/css">
         <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
         rel="stylesheet" type="text/css">
+
+        <style>
+            .jumbotron {
+                background-color: transparent;
+                background-image: url('bg.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .idea-box {
+                margin-top: 25px;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 3px #ccc;
+                transition-duration: 0.6s;
+            }
+            .idea-box:nth-child(odd) {
+                border: 1px solid #ddd;
+                background-color: #333;
+                color: #fff;
+            }
+            .btn {
+                margin-right: 12px;
+            }
+            .btn-success {
+                 margin-left: 10px;
+            }
+            .btn-save {
+                float: right;
+            }
+        </style>
     </head>
     
     <body>
-        <div class="section">
+        <section class="main-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <h1>Welcome to Idea Box</h1>
-                        <img src="https://unsplash.imgix.net/photo-1422222948315-28aadb7a2cb8?fm=jpg&amp;s=cfeadbd7a991e58b553bee29a7eeca55"
-                        class="img-responsive">
-                    </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <a class="btn btn-primary">Create Idea</a>
+                    <div class="col-sm-12">
+                        <div class="jumbotron text-center">
+                            <h2>Welcome to ideaBox</h2>
+                            <p class="lead">
+                                Create ideas. Grow. Be better.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6 text-center" style="margin-top: 25px">
+                            <form id="idea-form">
+                                 <div class="form-group">
+                                     <label>Idea Title</label>
+                                    <input type="text" class="form-control" id="user-idea" placeholder="Movies" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Idea Description</label>
+                                    <textarea placeholder="Movies are great, I need to buy tickets" id="desc" class="form-control"  rows="10" required></textarea>
+                                </div>
+
+                                <button class="submit-idea btn btn-default" id="idea-submit">Submit Idea</button>
+                            </form>
+                        </div>
+
+                        <div class="col-sm-6" id="parent">
+                            <!-- <div class="idea-box">
+                                  <h3 class="idea-title">Movies</h3>
+                                  <p class="idea-description">Movies are great, I need to buy tickets</p>
+                            </div>
+
+                            <div class="idea-box">
+                                  <h3 class="idea-title">Skydive</h3>
+                                  <p class="idea-description">Skydive from the top of a mountain</p>
+                            </div>
+
+                            <div class="idea-box">
+                                  <h3 class="idea-title">Eat</h3>
+                                  <p class="idea-description">Eat from the best restuarant</p>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <ul class="list-group">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
+        <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+        <script type="text/javascript" src="big.js"></script>
     </body>
 
 </html>

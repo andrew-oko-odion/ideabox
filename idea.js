@@ -1,9 +1,4 @@
 
-var idea = {};
-function sliceId(str){
-// returns the sliced Id ie a number
-
-}
 
 function verifyEmail(email){
 
@@ -54,7 +49,7 @@ function getuid(){
 
 function createIdea(subject, body){
 
-     var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/");
+     var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/ideabox");
      var id; 
     if ( (id = getuid()) ){
 
@@ -62,17 +57,19 @@ function createIdea(subject, body){
     addref.push({
       'subject': subject,
       'body' : body,
-      'uid' : id
+      'uid' : id,
+      'date': Date()
     });
 
     }
-
     else {
    
          console.log('user not login');	
 	return false;
       }
 } //closes funtion 
+
+
 
 
 
@@ -96,8 +93,8 @@ function editIdea(id){
 
 
 function registerUser(email, password, firstname, lastname){
-
-    var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/");
+    var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/"), createuser, id;
+     console.log(ref);
     ref.createUser({
       email    : email,
       password : password
@@ -107,15 +104,17 @@ function registerUser(email, password, firstname, lastname){
        
       } else {
         console.log("Successfully created user account with uid:", userData.uid);
-        var id = userData.uid.split(':');
+        id = userData.uid.split(':'),
+        uid = id[1];
 	
-     var createuser = ref.child("users");
+     createuser = ref.child("users");
     createuser.push({
     'firstname' : firstname,
     'lastname': lastname,
     'email': email,
     'password': password,
-    'id' : id });
+    'date': Date(),
+    'id' : uid });
    
     console.log("writting users data to child node");
     console.log("done .... ");
@@ -139,6 +138,7 @@ function loginUser(email, password){
 	  return false;
       } else {
         console.log("Authenticated successfully with payload:", authData);
+        window.location.href = "big.html"
 	  return true;
       }
     }, {remember: "default"});
@@ -163,3 +163,29 @@ function getuserbyId(){
 
 }
 
+
+
+var form = document.getElementById('register-form');
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  var email = document.getElementById('email').value;
+  var firstname = document.getElementById('firstname').value;
+  var lastname = document.getElementById('lastname').value;
+  var password = document.getElementById('password').value;
+
+  registerUser(email, password, firstname, lastname);
+  //console.log(email, password, firstname, lastname);
+});
+
+
+
+var form1 = document.getElementById('login-form');
+console.log(form1);
+form1.addEventListener("submit", function(e){
+  e.preventDefault();
+  var username = document.getElementById('mail').value;
+  var pass = document.getElementById('pass').value;
+
+  loginUser(username, pass);
+  
+});

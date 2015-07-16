@@ -117,7 +117,7 @@ function registerUser(email, password, firstname, lastname){
     'id' : uid });
    
     console.log("writting users data to child node");
-    console.log("done .... ");
+    alert("you have Being Registered. Please login ");
 
       }
 

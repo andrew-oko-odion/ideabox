@@ -129,7 +129,9 @@ submitIdeaForm.addEventListener('submit', function (e) {
 
   //pushIdea(userIdeaTitle.value, userIdeaDescription.value);
 
-  createIdea(userIdeaTitle.value, userIdeaDescription.value)
+  createIdea(userIdeaTitle.value, userIdeaDescription.value);
+  userIdeaTitle.value = '';
+  userIdeaDescription.value = '';
 })
 
 //getuid();

@@ -70,15 +70,6 @@ function createIdea(subject, body){
 } //closes funtion 
 
 
-
-
-
-function deleteIdea(id){
-
-
-}
-
-
 function editIdea(id){
 
     var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/");
@@ -117,7 +108,7 @@ function registerUser(email, password, firstname, lastname){
     'id' : uid });
    
     console.log("writting users data to child node");
-    console.log("done .... ");
+    alert("you have Being Registered. Please login ");
 
       }
 

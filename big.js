@@ -1,6 +1,7 @@
 var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/"),
-    usersRef = ref.child('users'),
-    ideasRef = ref.child('ideabox');
+usersRef = ref.child('users'),
+ideasRef = ref.child('ideabox');
+
 function getuid(){
 
  // returns the userid of an authenticated user... 
@@ -36,7 +37,9 @@ function pushIdea(subject, body){
     });
 } //closes funtion 
 
+
 function createIdea(title, desc) {
+  
   var showIdeasWrapper = document.getElementById('parent'),
        wrapper = document.createElement('div'),
        subject = document.createElement('h3'),
@@ -108,10 +111,6 @@ function createIdea(title, desc) {
           } else {
           return false;
         }
-
-
-
-
 
     });
 

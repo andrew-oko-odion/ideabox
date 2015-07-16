@@ -84,8 +84,10 @@ function editIdea(id){
 
 
 function registerUser(email, password, firstname, lastname){
+
     var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/"), createuser, id;
-     console.log(ref);
+
+    console.log(ref);
     ref.createUser({
       email    : email,
       password : password
@@ -157,15 +159,14 @@ function getuserbyId(){
 
 
 var form = document.getElementById('register-form');
+
 form.addEventListener("submit", function(e){
   e.preventDefault();
   var email = document.getElementById('email').value;
   var firstname = document.getElementById('firstname').value;
   var lastname = document.getElementById('lastname').value;
   var password = document.getElementById('password').value;
-
   registerUser(email, password, firstname, lastname);
-  //console.log(email, password, firstname, lastname);
 });
 
 

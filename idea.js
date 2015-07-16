@@ -70,15 +70,6 @@ function createIdea(subject, body){
 } //closes funtion 
 
 
-
-
-
-function deleteIdea(id){
-
-
-}
-
-
 function editIdea(id){
 
     var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/");

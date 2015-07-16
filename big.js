@@ -1,9 +1,9 @@
-var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/"),
-usersRef = ref.child('users'),
-ideasRef = ref.child('ideabox');
+
+var ref = new Firebase("https://scorching-inferno-7037.firebaseio.com/");
+var usersRef = ref.child('users');
+var ideasRef = ref.child('ideabox');
 
 function getuid(){
-
  // returns the userid of an authenticated user... 
  var authInfo = ref.getAuth(),
      id = authInfo.uid.split(':'),
@@ -16,6 +16,7 @@ function getuid(){
      }
 return uid;
 }
+
 
 function pushIdea(subject, body){
 
@@ -35,11 +36,11 @@ function pushIdea(subject, body){
         alert('Successfully pushed to Database!');
       }
     });
-} //closes funtion 
+} //closes funtion here, it becoming confusing
 
 
 function createIdea(title, desc) {
-  
+
   var showIdeasWrapper = document.getElementById('parent'),
        wrapper = document.createElement('div'),
        subject = document.createElement('h3'),
@@ -69,6 +70,8 @@ function createIdea(title, desc) {
     removeBtn.textContent = 'Remove';
     saveBtn.textContent = 'Save';
 
+    
+
     removeBtn.addEventListener('click', function () {
       this.parentNode.parentNode.removeChild(this.parentNode);
     });
@@ -84,9 +87,10 @@ function createIdea(title, desc) {
       }
     });
 
+    //  Self Evecuting Function ...    
     editBtn.addEventListener('click', function () {
-      var editForm = document.createElement('form'),
-          editSubject = document.createElement('input'), editBody = document.createElement('textarea');
+      var editForm = document.createElement('form');
+      var  editSubject = document.createElement('input'), editBody = document.createElement('textarea');
 
           ++counter;
 
@@ -114,23 +118,18 @@ function createIdea(title, desc) {
 
     });
 
- 
 }
 
-var userIdeaTitle = document.getElementById('user-idea'), 
-    userIdeaDescription = document.getElementById('desc'), 
-    submitIdeaForm = document.getElementById('idea-form');
+
+var userIdeaTitle = document.getElementById('user-idea');
+var userIdeaDescription = document.getElementById('desc'); 
+var submitIdeaForm = document.getElementById('idea-form');
 
 
 submitIdeaForm.addEventListener('submit', function (e) {
   e.preventDefault();
   console.log('Title: ' + userIdeaTitle.value, 'Description: ' + userIdeaDescription.value);
-
-  //pushIdea(userIdeaTitle.value, userIdeaDescription.value);
-
   createIdea(userIdeaTitle.value, userIdeaDescription.value);
   userIdeaTitle.value = '';
   userIdeaDescription.value = '';
 })
-
-//getuid();

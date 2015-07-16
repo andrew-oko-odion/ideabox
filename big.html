@@ -10,7 +10,6 @@
         rel="stylesheet" type="text/css">
         <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
         rel="stylesheet" type="text/css">
-
         <style>
             .jumbotron {
                 background-color: transparent;
@@ -49,27 +48,23 @@
                     <div class="col-sm-12">
                         <div class="jumbotron text-center">
                             <h2>Welcome to ideaBox</h2>
-                            <p class="lead">
-                                Create ideas. Grow. Be better.
-                            </p>
+                            <p class="lead">Create ideas. Grow. Be better.</p>
                         </div>
-
                         <div class="col-sm-6 text-center" style="margin-top: 25px">
                             <form id="idea-form">
-                                 <div class="form-group">
-                                     <label>Idea Title</label>
-                                    <input type="text" class="form-control" id="user-idea" placeholder="Movies" required>
+                                <div class="form-group">
+                                    <label>Idea Title</label>
+                                    <input type="text" class="form-control" id="user-idea"
+                                    placeholder="Movies" required="">
                                 </div>
-
                                 <div class="form-group">
                                     <label>Idea Description</label>
-                                    <textarea placeholder="Movies are great, I need to buy tickets" id="desc" class="form-control"  rows="10" required></textarea>
+                                    <textarea placeholder="Movies are great, I need to buy tickets"
+                                    id="desc" class="form-control" rows="10" required=""></textarea>
                                 </div>
-
                                 <button class="submit-idea btn btn-default" id="idea-submit">Submit Idea</button>
                             </form>
                         </div>
-
                         <div class="col-sm-6" id="parent">
                             <!-- <div class="idea-box">
                                   <h3 class="idea-title">Movies</h3>
@@ -84,12 +79,40 @@
                             <div class="idea-box">
                                   <h3 class="idea-title">Eat</h3>
                                   <p class="idea-description">Eat from the best restuarant</p>
-                            </div> -->
-                        </div>
+                            </div> --></div>
                     </div>
                 </div>
             </div>
         </section>
+        <footer class="section section-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>IdeaBox</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                            <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                            <br>Ut enim ad minim veniam, quis nostrud</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-info text-right">
+                            <br>
+                            <br>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 hidden-xs text-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
         <script type="text/javascript" src="big.js"></script>
     </body>
